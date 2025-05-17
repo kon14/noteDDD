@@ -1,0 +1,26 @@
+# Rust
+/target
+
+# Environment Variables
+/.env
+
+# IDE
+/.idea
+/.vscode
+
+# SQL
+#/migrations
+# ^ I'm not particularly fond of this.
+#   But it spares me a bunch of overkill tricks around `Dockerfile.migrations` build contexts.
+#   Using multi-stage Docker builds anyway, so it's mostly at the expense of copy times.
+
+# Git
+/.gitignore
+/lefthook.yml
+
+# Docker
+/docker-compose.yml
+
+# Documentation
+**/*.md
+/examples

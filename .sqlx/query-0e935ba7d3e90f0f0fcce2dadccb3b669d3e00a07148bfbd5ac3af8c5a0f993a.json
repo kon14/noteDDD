@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        DELETE FROM notes\n        WHERE\n            id = $1 AND\n            ($2::uuid IS NULL OR user_id = $2)\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Uuid"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "0e935ba7d3e90f0f0fcce2dadccb3b669d3e00a07148bfbd5ac3af8c5a0f993a"
+}

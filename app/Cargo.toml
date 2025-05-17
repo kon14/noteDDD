@@ -1,0 +1,11 @@
+[package]
+name = "app"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+common = { path = "../common" }
+dmn = { path = "../dmn" }
+async-trait = "0.1.88"
+uuid = { version = "1.16.0", features = ["v4"] }
+chrono = "0.4.41"

@@ -1,0 +1,15 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        DELETE FROM access_tokens\n        WHERE\n            (id = $1 OR jwt = $2)\n        ",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Uuid",
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "3ef5ed3ea1756c15cb7dd3ac2989a868e6f5063c4bd8bc8e743f1f9d3e1499f2"
+}

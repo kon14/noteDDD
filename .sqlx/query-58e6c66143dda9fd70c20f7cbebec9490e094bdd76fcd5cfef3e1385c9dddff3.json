@@ -1,0 +1,58 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "\n        SELECT\n            at.user_id as user_id,\n            at.id as at_id,\n            at.jwt as at_jwt,\n            at.expires_at as at_expires_at,\n            rt.id as rt_id,\n            rt.jwt as rt_jwt,\n            rt.expires_at as rt_expires_at\n        FROM refresh_tokens rt\n        INNER JOIN access_tokens at\n        ON rt.access_token_id = at.id\n        WHERE rt.user_id = $1\n        ORDER BY at.expires_at DESC\n        ",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "user_id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 1,
+        "name": "at_id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 2,
+        "name": "at_jwt",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 3,
+        "name": "at_expires_at",
+        "type_info": "Timestamptz"
+      },
+      {
+        "ordinal": 4,
+        "name": "rt_id",
+        "type_info": "Uuid"
+      },
+      {
+        "ordinal": 5,
+        "name": "rt_jwt",
+        "type_info": "Text"
+      },
+      {
+        "ordinal": 6,
+        "name": "rt_expires_at",
+        "type_info": "Timestamptz"
+      }
+    ],
+    "parameters": {
+      "Left": [
+        "Uuid"
+      ]
+    },
+    "nullable": [
+      false,
+      false,
+      false,
+      false,
+      false,
+      false,
+      false
+    ]
+  },
+  "hash": "58e6c66143dda9fd70c20f7cbebec9490e094bdd76fcd5cfef3e1385c9dddff3"
+}

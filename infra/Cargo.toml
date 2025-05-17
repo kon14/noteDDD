@@ -1,0 +1,16 @@
+[package]
+name = "infra"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = "0.4.41"
+app = { path = "../app" }
+common = { path = "../common" }
+dmn = { path = "../dmn" }
+sqlx = { version = "0.8.5", features = ["postgres", "uuid", "runtime-tokio", "chrono"] }
+uuid = { version = "1.16.0", features = ["v4", "serde"] }
+async-trait = "0.1.88"
+jsonwebtoken = "9.3.1"
+serde = "1.0.219"
+bcrypt = "0.17.0"
